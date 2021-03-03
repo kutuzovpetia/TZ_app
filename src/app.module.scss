@@ -1,0 +1,16 @@
+$bg: #343A40;
+
+.App{
+  display: flex;
+  justify-content: center;
+  background-color: $bg;
+  min-height: 100vh;
+  
+  .wrapper{
+    width: 100%;
+  
+  
+  }
+}
+
+

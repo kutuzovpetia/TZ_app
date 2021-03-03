@@ -1,0 +1,20 @@
+.wrapper{
+    padding: 0 15px;
+
+    .btnDelete{
+        width: 60px;
+        .button{
+            padding: 2px 5px;
+            .iconStyle{
+                font-size: 20px;
+            }
+        }
+    }
+}
+
+.load{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}

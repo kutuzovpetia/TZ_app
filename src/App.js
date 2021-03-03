@@ -1,25 +1,33 @@
-import logo from './logo.svg';
-import './App.css';
+import React, {useEffect} from 'react';
+import s from './app.module.scss';
+import "bootstrap/dist/css/bootstrap.min.css";
+import Controls from './components/header-controls';
+import Table from './components/table';
+import { connect } from "react-redux";
+import * as actions from "./action/action.js";
+import DataService from './dataService.js';
 
-function App() {
+const App = (props) => {
+  
+useEffect(()=>{
+  const data = new DataService(); 
+  data.getUsers().then((res)=>{props.setData(res); props.showSpinner()})
+},[]);
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <div className={s.App}>
+        <div className={s.wrapper}>
+            <Controls/>
+            <Table/>
+        </div>
+    </div>    
   );
 }
 
-export default App;
+const mapStateToProps = (state) => {
+  return {
+    data: state.data,
+  };
+};
+
+export default connect(mapStateToProps, actions)(App);

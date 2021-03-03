@@ -1,0 +1,10 @@
+export const getData = () => ({type: 'DATA'});
+export const setData = (data) => ({type: 'SET_DATA', value: data});                                                    
+export const showSpinner = () => ({type: 'SHOW_SPINNER'});
+export const showBtnDel = () => ({type: 'SHOW_BUTTONS_DELETE'}); 
+export const showAdd = () => ({type: 'SHOW_ADD_CONTROLS'});
+export const showEdit = () => ({type: 'SHOW_BUTTONS_EDIT'}); 
+export const setFullName = (name) => ({type: 'SET_FULL_NAME', value: name});
+export const setEmail = (email) => ({type: 'SET_EMAIL', value: email});
+export const setAge = (age) => ({type: 'SET_AGE', value: age});
+export const addUser = (user) => ({type: 'ADD_USER', value: user});
